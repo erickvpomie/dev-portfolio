@@ -21,7 +21,7 @@ const ProjectCard: FC<IProjectCard> = ({
 			ref={ref}
 			initial={{ opacity: 0, y: 20 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ delay: index * 0.2 + 0.4, duration: 0.5 }}
+			transition={{ delay: index * 0.1, duration: 0.3 }}
 			viewport={{ once: true }}
 			className={`relative flex flex-col rounded-3xl bg-white p-6 gap-3 border-2 border-transparent overflow-hidden row-span-1 col-span-8 dark:bg-raisin-black lg:p-8 ${className}`}
 		>

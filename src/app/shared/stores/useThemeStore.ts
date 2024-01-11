@@ -8,8 +8,10 @@ interface IThemeStore {
 	toggleTheme: () => void
 }
 
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches
+
 export const useThemeStore = create<IThemeStore>(set => ({
-	theme: localStorage.getItem('theme') || THEME_LIGHT,
+	theme: localStorage.getItem('theme') || (isDark ? THEME_DARK : THEME_LIGHT),
 	toggleTheme: () =>
 		set(state => ({
 			theme: state.theme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT,

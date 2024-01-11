@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { MdAlternateEmail, MdAutoGraph } from 'react-icons/md'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { mapGenerator } from '../../shared/utils/map-utils.ts'
@@ -15,9 +15,18 @@ import ProjectCard from '../../theme/components/ProjectCard/ProjectCard.tsx'
 import ExperienceCard from '../../theme/components/ExperienceCard/ExperienceCard.tsx'
 import Footer from '../../theme/components/Footer/Footer.tsx'
 import { motion } from 'framer-motion'
+import { useMediaQuery } from '@uidotdev/usehooks'
+import { AnimatedCounter } from '../../theme/components/AnimatedCounter/AnimatedCounter.tsx'
 
 const Home = () => {
 	const theme = useThemeStore(state => state.theme)
+	const [isMobile, setIsMobile] = useState(false)
+	const mobile = useMediaQuery('only screen and (max-width : 768px)')
+
+	useEffect(() => {
+		setIsMobile(mobile)
+	}, [mobile])
+
 	useEffect(() => {
 		mapGenerator()
 	}, [theme])
@@ -30,7 +39,7 @@ const Home = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.12, duration: 0.5 }}
+						transition={{ delay: 0, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='row-span-2 col-span-6 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-10 justify-end p-6 dark:bg-raisin-black xl:col-span-4 lg:items-end sm:flex-row  lg:p-10'
 					>
@@ -76,7 +85,7 @@ const Home = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.14, duration: 0.5 }}
+						transition={{ delay: 0.1, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='row-span-1 col-span-6 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-2 p-7 dark:bg-raisin-black xl:col-span-2 lg:p-10'
 					>
@@ -89,11 +98,14 @@ const Home = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.15, duration: 0.5 }}
+						transition={{ delay: isMobile ? 0 : 0.2, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='row-span-1 col-span-3 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-2 items-center justify-center dark:bg-raisin-black xl:col-span-1'
 					>
-						<p className='text-7xl z-[1] font-bold'>+3</p>
+						<p className='text-7xl z-[1] font-bold flex items-center gap-1'>
+							<span>+</span>
+							<AnimatedCounter from={0} to={3} />
+						</p>
 						<p className='text-sm font-semibold max-w-fit opacity-70 z-[1]'>
 							Years of experience
 						</p>
@@ -103,7 +115,7 @@ const Home = () => {
 						id='map'
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.16, duration: 0.5 }}
+						transition={{ delay: isMobile ? 0 : 0.3, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='row-span-1 col-span-3 rounded-3xl bg-white dark:bg-raisin-black overflow-hidden border-2 border-transparent xl:col-span-1 flex items-center justify-center relative'
 					>
@@ -115,7 +127,7 @@ const Home = () => {
 					<motion.h1
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.17, duration: 0.5 }}
+						transition={{ delay: isMobile ? 0 : 0.4, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='text-3xl font-semibold'
 					>
@@ -124,7 +136,7 @@ const Home = () => {
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.18, duration: 0.5 }}
+						transition={{ delay: isMobile ? 0 : 0.5, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='opacity-70'
 					>
@@ -140,7 +152,7 @@ const Home = () => {
 					<motion.h1
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.1, duration: 0.5 }}
+						transition={{ delay: 0, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='text-3xl font-semibold'
 					>
@@ -149,7 +161,7 @@ const Home = () => {
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.1, duration: 0.5 }}
+						transition={{ delay: 0, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='opacity-70'
 					>
