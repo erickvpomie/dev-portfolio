@@ -14,11 +14,13 @@ import {
 import ProjectCard from '../../theme/components/ProjectCard/ProjectCard.tsx'
 import ExperienceCard from '../../theme/components/ExperienceCard/ExperienceCard.tsx'
 import Footer from '../../theme/components/Footer/Footer.tsx'
-import { motion } from 'framer-motion'
-import { useMediaQuery } from '@uidotdev/usehooks'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useHover, useMediaQuery } from '@uidotdev/usehooks'
 import { AnimatedCounter } from '../../theme/components/AnimatedCounter/AnimatedCounter.tsx'
+import InfinityScroll from '../../theme/components/InfinityScroll/InfinityScroll.tsx'
 
 const Home = () => {
+	const [ref, hovering] = useHover()
 	const theme = useThemeStore(state => state.theme)
 	const [isMobile, setIsMobile] = useState(false)
 	const mobile = useMediaQuery('only screen and (max-width : 768px)')
@@ -39,7 +41,7 @@ const Home = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0, duration: 0.3 }}
+						transition={{ delay: 0.2, duration: 0.4 }}
 						viewport={{ once: true }}
 						className='row-span-2 col-span-6 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-10 justify-end p-6 dark:bg-raisin-black xl:col-span-4 lg:items-end sm:flex-row  lg:p-10'
 					>
@@ -85,7 +87,7 @@ const Home = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.1, duration: 0.3 }}
+						transition={{ delay: 0.25, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='row-span-1 col-span-6 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-2 p-7 dark:bg-raisin-black xl:col-span-2 lg:p-10'
 					>
@@ -98,7 +100,7 @@ const Home = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: isMobile ? 0 : 0.2, duration: 0.3 }}
+						transition={{ delay: isMobile ? 0.15 : 0.3, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='row-span-1 col-span-3 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-2 items-center justify-center dark:bg-raisin-black xl:col-span-1'
 					>
@@ -113,14 +115,29 @@ const Home = () => {
 					</motion.div>
 					<motion.div
 						id='map'
+						ref={ref}
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ delay: isMobile ? 0 : 0.3, duration: 0.3 }}
+						transition={{ delay: isMobile ? 0.2 : 0.35, duration: 0.3 }}
 						viewport={{ once: true }}
 						className='row-span-1 col-span-3 rounded-3xl bg-white dark:bg-raisin-black overflow-hidden border-2 border-transparent xl:col-span-1 flex items-center justify-center relative'
 					>
 						<img className='w-11 z-[2]' src={face} alt='memoji' />
 						<div className='w-24 h-24 bg-[#98d0ff] absolute z-[1] rounded-full bg-opacity-30 border-2 border-white animate__animated animate__pulse animate__infinite infinite animate__fast' />
+						<AnimatePresence>
+							{hovering && (
+								<motion.div
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									className='w-full h-10 backdrop-blur-sm absolute left-0 bottom-0 z-[2] flex items-center justify-center text-left text-opacity-70'
+								>
+									<span className='text-xs font-medium'>
+										From Córdoba, MX 🇲🇽
+									</span>
+								</motion.div>
+							)}
+						</AnimatePresence>
 					</motion.div>
 				</section>
 				<header className='w-full flex flex-col gap-2 text-center'>
@@ -143,10 +160,43 @@ const Home = () => {
 						Here are some projects I've worked on in the past few years.
 					</motion.p>
 				</header>
-				<section className='w-full grid auto-rows-[328px] lg:auto-rows-[142px] grid-cols-8 gap-4'>
+				<section className='w-full grid auto-rows-[380px] lg:auto-rows-[140px] grid-cols-8 gap-4'>
 					{Projects.map((project: IProjectCard) => {
 						return <ProjectCard {...project} />
 					})}
+				</section>
+				<header className='w-full flex flex-col gap-2 text-center'>
+					<motion.h1
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0, duration: 0.3 }}
+						viewport={{ once: true }}
+						className='text-3xl font-semibold'
+					>
+						Technologies
+					</motion.h1>
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0, duration: 0.3 }}
+						viewport={{ once: true }}
+						className='opacity-70'
+					>
+						These are some of the technologies I've worked with:
+					</motion.p>
+				</header>
+				<section className='w-full h-40 max-w-5xl xl:max-w-7xl text-base'>
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.2, duration: 0.5 }}
+						viewport={{ once: true }}
+						className='w-full h-full relative inline-flex flex-nowrap bg-white dark:bg-raisin-black rounded-3xl items-center justify-between px-10 overflow-hidden'
+					>
+						<div className='absolute left-0 w-28 h-full bg-gradient-to-r from-white to-transparent dark:from-raisin-black dark:to-transparent z-[1]' />
+						<div className='absolute right-0 w-28 h-full bg-gradient-to-l from-white to-transparent dark:from-raisin-black dark:to-transparent z-[1]' />
+						<InfinityScroll />
+					</motion.div>
 				</section>
 				<header className='w-full flex flex-col gap-2 text-center'>
 					<motion.h1

@@ -8,6 +8,7 @@ const ProjectCard: FC<IProjectCard> = ({
 	id,
 	project_name,
 	description,
+	technologies,
 	screenShot,
 	demoLink,
 	className,
@@ -45,9 +46,14 @@ const ProjectCard: FC<IProjectCard> = ({
 				<div className='flex flex-col gap-1 z-[1]'>
 					<h3 className='text-2xl font-bold'>{project_name}</h3>
 					<p className='text-base opacity-70'>{description}</p>
+					<div className='flex items-center gap-2 opacity-90 font-medium'>
+						{technologies.map(tech => (
+							<span className='text-sm'>{tech}</span>
+						))}
+					</div>
 				</div>
 				<img
-					className={`absolute -right-10 w-full top-40 rounded-2xl object-cover z-[1] transition-all duration-300 lg:-right-12 ${
+					className={`absolute -right-10 w-full top-48 rounded-2xl object-cover z-[1] transition-all duration-300 lg:-right-12 lg:top-48 ${
 						hovering && 'scale-[1.025]'
 					}`}
 					src={screenShot}

@@ -12,9 +12,16 @@ export interface IProjectCard {
 	id: string
 	project_name: string
 	description: string
+	technologies: string[]
 	index: number
 	screenShot?: string
 	isPrivate?: boolean
 	demoLink?: string
 	className?: string
+}
+
+export interface IDevToolsElement {
+	id: string
+	name: string
+	icon: string
 }

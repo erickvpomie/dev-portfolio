@@ -1,4 +1,8 @@
-import { IExperienceCard, IProjectCard } from '../models/global-interface.ts'
+import {
+	IDevToolsElement,
+	IExperienceCard,
+	IProjectCard,
+} from '../models/global-interface.ts'
 import { v4 as uuid } from 'uuid'
 import dd3_bg from '../../../assets/dd3_bg.webp'
 import dd360 from '../../../assets/dd360.webp'
@@ -22,6 +26,7 @@ export const Projects: IProjectCard[] = [
 		demoLink: 'https://dd3.mx/',
 		className: 'lg:row-span-3 xl:col-span-4',
 		index: 1,
+		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'AWS S3'],
 	},
 	{
 		id: uuid(),
@@ -31,25 +36,28 @@ export const Projects: IProjectCard[] = [
 		demoLink: 'https://profesionalurbano.com/',
 		className: 'lg:row-span-2 xl:col-span-4',
 		index: 2,
+		technologies: ['Laravel', 'PHP'],
 	},
 	{
 		id: uuid(),
 		project_name: 'Stock Market',
-		description: 'A simple stock market app.',
+		description: 'Stock Market App to track your favorite stocks.',
 		screenShot: gbm,
 		demoLink: 'https://fluffy-marigold-adc835.netlify.app/',
 		className: 'lg:row-span-3 xl:col-span-4',
 		isPrivate: true,
 		index: 3,
+		technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
 	},
 	{
 		id: uuid(),
 		project_name: 'Bluee IoT',
-		description: 'A platform to manage IoT devices.',
+		description: 'Landing page for Bluee IoT',
 		screenShot: bluee,
 		demoLink: 'https://bluee.com.mx/',
 		className: 'lg:row-span-2 xl:col-span-4',
 		index: 4,
+		technologies: ['Angular', 'TypeScript', 'SASS'],
 	},
 ]
 export const Experiences: IExperienceCard[] = [
@@ -88,5 +96,63 @@ export const Experiences: IExperienceCard[] = [
 		dates: 'Jan. 2021 — Nov. 2021',
 		url_site: 'https://www.bwl.com.mx/',
 		background_url: bwl_bg,
+	},
+]
+
+export const DevTools: IDevToolsElement[] = [
+	{
+		id: uuid(),
+		name: 'HTML5',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
+	},
+	{
+		id: uuid(),
+		name: 'CSS3',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg',
+	},
+	{
+		id: uuid(),
+		name: 'JavaScript',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg',
+	},
+	{
+		id: uuid(),
+		name: 'TypeScript',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg',
+	},
+	{
+		id: uuid(),
+		name: 'SASS',
+		icon: 'https://sass-lang.com/assets/img/logos/logo.svg',
+	},
+	{
+		id: uuid(),
+		name: 'React',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+	},
+	{
+		id: uuid(),
+		name: 'Angular',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg',
+	},
+	{
+		id: uuid(),
+		name: 'Next.js',
+		icon: 'https://rakesh-gupta29.github.io/img/logos/nextjs.svg',
+	},
+	{
+		id: uuid(),
+		name: 'Vite',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg',
+	},
+	{
+		id: uuid(),
+		name: 'Tailwind CSS',
+		icon: 'https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg',
+	},
+	{
+		id: uuid(),
+		name: '.NET',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg',
 	},
 ]
