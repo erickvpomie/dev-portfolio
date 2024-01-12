@@ -2,10 +2,15 @@ import SunIcon from '../../icons/SunIcon.tsx'
 import MoonIcon from '../../icons/MoonIcon.tsx'
 import { GrCloudDownload } from 'react-icons/gr'
 import { useThemeStore } from '../../../shared/stores/useThemeStore.ts'
+import { LuLanguages } from 'react-icons/lu'
+import { useTranslateStore } from '../../../shared/stores/useTranslateStore.ts'
 
 const Header = () => {
 	const toggleTheme = useThemeStore(state => state.toggleTheme)
 	const theme = useThemeStore(state => state.theme)
+	const setShowTranslateToggle = useTranslateStore(
+		state => state.setShowTranslateToggle,
+	)
 
 	return (
 		<header className='w-full overflow-x-hidden h-[5rem] flex justify-center dark:bg-dusky bg-opacity-70 dark:bg-opacity-70 fixed top-0 left-0 z-10 backdrop-blur-lg subpixel-antialiased'>
@@ -16,6 +21,12 @@ const Header = () => {
 					</span>
 				</div>
 				<div className='flex items-center gap-4'>
+					<button
+						className='text-xl'
+						onClick={() => setShowTranslateToggle(true)}
+					>
+						<LuLanguages />
+					</button>
 					{theme === 'light' ? (
 						<button onClick={toggleTheme}>
 							<MoonIcon className='w-6 h-6 fill-current text-[#2f3133] active:rotate-[360deg] transition-all duration-300' />

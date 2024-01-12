@@ -1,3 +1,52 @@
 {
-  "salutation": "Hello"
+  "about-section": {
+    "title": "About",
+    "description": "Web developer with experience in designing, developing and maintaining front-end web applications."
+  },
+  "experience-box": {
+    "title": "Years of experience"
+  },
+  "location-box" : {
+    "title": "From Córdoba, MX"
+  },
+  "projects-section": {
+    "title": "Projects",
+    "description": "Here are some projects I've worked on in the past few years.",
+    "work-experience": "Work Experience",
+    "personal-experience": "Personal Experience",
+    "projects" : {
+      "DD3Land": "Build your meta-verse with DD3Land's editor technology.",
+      "profesional": "A platform to connect professionals with clients.",
+      "stock": "Stock Market App to track your favorite stocks.",
+      "bluee": "Landing page for Bluee IoT"
+    }
+  },
+  "technologies-section": {
+    "title": "Technologies",
+    "description": "These are some of the technologies I've worked with:"
+  },
+  "experience-section": {
+    "title": "Experience",
+    "description": "I have worked for the following companies:",
+    "companies": {
+      "DD360": {
+        "dates": "Jul. 2022 — Nov. 2023"
+      },
+      "nolab": {
+        "dates":  "Feb. 2022 — Jul. 2022"
+      },
+      "esperanza": {
+        "dates":  "Nov. 2021 — Feb. 2022"
+      },
+      "bwl": {
+        "dates":  "Jan. 2021 — Nov. 2021"
+      }
+    }
+  },
+  "others-translations": {
+    "degree": "Front-end Developer",
+    "visit": "Visit",
+    "copy-right": "All rights reserved.",
+    "last-update": "Last update: Friday, 12 January 2024"
+  }
 }

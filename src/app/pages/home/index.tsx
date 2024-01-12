@@ -18,12 +18,28 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useHover, useMediaQuery } from '@uidotdev/usehooks'
 import { AnimatedCounter } from '../../theme/components/AnimatedCounter/AnimatedCounter.tsx'
 import InfinityScroll from '../../theme/components/InfinityScroll/InfinityScroll.tsx'
+import { useTranslateStore } from '../../shared/stores/useTranslateStore.ts'
+import { switchLanguage } from '../../shared/utils/translate-utils.tsx'
+import { useTranslation } from 'react-i18next'
 
 const Home = () => {
 	const [ref, hovering] = useHover()
+	const { t } = useTranslation('global')
 	const theme = useThemeStore(state => state.theme)
 	const [isMobile, setIsMobile] = useState(false)
 	const mobile = useMediaQuery('only screen and (max-width : 768px)')
+	const showTranslateToggle = useTranslateStore(
+		state => state.showTranslateToggle,
+	)
+	const setShowTranslateToggle = useTranslateStore(
+		state => state.setShowTranslateToggle,
+	)
+
+	const handleTranslateToggle = () => {
+		if (showTranslateToggle) {
+			setShowTranslateToggle(false)
+		}
+	}
 
 	useEffect(() => {
 		setIsMobile(mobile)
@@ -34,9 +50,32 @@ const Home = () => {
 	}, [theme])
 
 	return (
-		<div className='w-full bg-moonlit select-none text-midnight flex flex-col items-center subpixel-antialiased dark:bg-dusky dark:text-noon scroll-smooth gap-5 lg:gap-10 mb-10'>
+		<div
+			onClick={handleTranslateToggle}
+			className='w-full bg-moonlit select-none text-midnight flex flex-col items-center subpixel-antialiased dark:bg-dusky dark:text-noon scroll-smooth gap-5 lg:gap-10 mb-10'
+		>
+			<div className='w-full flex items-center justify-center mt-16 lg:mt-[3rem] fixed z-20'>
+				{showTranslateToggle && (
+					<div className='w-full h-full relative max-w-5xl px-5 xl:max-w-7xl '>
+						<div className='w-auto h-auto absolute flex flex-col gap-2 px-5 py-4 -top-1 z-20 right-36 lg:right-[15rem] lg:top-4 bg-white dark:bg-raisin-black rounded-xl'>
+							<span
+								className='text-sm font-medium cursor-pointer'
+								onClick={() => switchLanguage('en')}
+							>
+								English
+							</span>
+							<span
+								className='text-sm font-medium cursor-pointer'
+								onClick={() => switchLanguage('es')}
+							>
+								Spanish
+							</span>
+						</div>
+					</div>
+				)}
+			</div>
 			<Header />
-			<main className='w-full mt-[5.5rem] flex flex-col gap-10 items-center max-w-5xl px-5 xl:max-w-7xl'>
+			<main className='w-full flex flex-col gap-10 items-center max-w-5xl px-5 xl:max-w-7xl mt-[5.5rem]'>
 				<section className='w-full grid auto-rows-[192px] grid-cols-6 gap-4'>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
@@ -54,7 +93,9 @@ const Home = () => {
 							<span className='text-3xl font-bold leading-6'>
 								José Erick Villa Pomié
 							</span>
-							<span className='text-lg font-medium'>Software Engineer</span>
+							<span className='text-lg font-medium'>
+								{t('others-translations.degree')}
+							</span>
 							<div className='flex flex-wrap items-center gap-2 mt-1 lg:gap-3'>
 								<a
 									className='flex items-center font-medium bg-moonlit px-3 py-2 rounded-lg text-dusky gap-2 active:scale-[1.1] transition-transform duration-300'
@@ -91,10 +132,11 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='row-span-1 col-span-6 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-2 p-7 dark:bg-raisin-black xl:col-span-2 lg:p-10'
 					>
-						<h2 className='text-2xl font-bold z-[1]'>About me</h2>
+						<h2 className='text-2xl font-bold z-[1]'>
+							{t('about-section.title')}
+						</h2>
 						<p className='text-base w-full z-[1] opacity-70'>
-							Web developer with experience in designing, developing and
-							maintaining front-end web applications.
+							{t('about-section.description')}
 						</p>
 					</motion.div>
 					<motion.div
@@ -109,7 +151,7 @@ const Home = () => {
 							<AnimatedCounter from={0} to={3} />
 						</p>
 						<p className='text-sm font-semibold max-w-fit opacity-70 z-[1]'>
-							Years of experience
+							{t('experience-box.title')}
 						</p>
 						<MdAutoGraph className='w-full h-full absolute -right-10 -bottom-12 opacity-5 dark:opacity-[0.02] p-5 z-[0]' />
 					</motion.div>
@@ -133,7 +175,7 @@ const Home = () => {
 									className='w-full h-10 backdrop-blur-sm absolute left-0 bottom-0 z-[2] flex items-center justify-center text-left text-opacity-70'
 								>
 									<span className='text-xs font-medium'>
-										From Córdoba, MX 🇲🇽
+										{t('location-box.title')} 🇲🇽
 									</span>
 								</motion.div>
 							)}
@@ -148,7 +190,7 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='text-3xl font-semibold'
 					>
-						Projects
+						{t('projects-section.title')}
 					</motion.h1>
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
@@ -157,7 +199,7 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='opacity-70'
 					>
-						Here are some projects I've worked on in the past few years.
+						{t('projects-section.description')}
 					</motion.p>
 				</header>
 				<section className='w-full grid auto-rows-[380px] lg:auto-rows-[140px] grid-cols-8 gap-4'>
@@ -173,7 +215,7 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='text-3xl font-semibold'
 					>
-						Technologies
+						{t('technologies-section.title')}
 					</motion.h1>
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
@@ -182,7 +224,7 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='opacity-70'
 					>
-						These are some of the technologies I've worked with:
+						{t('technologies-section.description')}
 					</motion.p>
 				</header>
 				<section className='w-full h-40 max-w-5xl xl:max-w-7xl text-base'>
@@ -206,7 +248,7 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='text-3xl font-semibold'
 					>
-						Experience
+						{t('experience-section.title')}
 					</motion.h1>
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
@@ -215,7 +257,7 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='opacity-70'
 					>
-						I have worked for the following companies:
+						{t('experience-section.description')}
 					</motion.p>
 				</header>
 				<section className='w-full grid auto-rows-[260px] grid-cols-8 gap-4'>

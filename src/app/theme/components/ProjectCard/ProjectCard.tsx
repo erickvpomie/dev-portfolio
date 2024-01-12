@@ -4,6 +4,7 @@ import { MdArrowOutward } from 'react-icons/md'
 import { IProjectCard } from '../../../shared/models/global-interface.ts'
 import { useHover } from '@uidotdev/usehooks'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 const ProjectCard: FC<IProjectCard> = ({
 	id,
 	project_name,
@@ -16,6 +17,7 @@ const ProjectCard: FC<IProjectCard> = ({
 	index,
 }) => {
 	const [ref, hovering] = useHover()
+	const { t } = useTranslation('global')
 	return (
 		<motion.div
 			key={id}
@@ -29,8 +31,10 @@ const ProjectCard: FC<IProjectCard> = ({
 			<div className='flex flex-col gap-3'>
 				<div className='flex items-center gap-3 opacity-50 z-[1]'>
 					<ImStack />
-					<span className='font-semibold'>
-						{isPrivate ? 'PERSONAL EXPERIENCE' : 'WORK EXPERIENCE'}
+					<span className='font-semibold uppercase'>
+						{isPrivate
+							? t('projects-section.personal-experience')
+							: t('projects-section.work-experience')}
 					</span>
 				</div>
 				{demoLink && (
@@ -45,10 +49,12 @@ const ProjectCard: FC<IProjectCard> = ({
 				)}
 				<div className='flex flex-col gap-1 z-[1]'>
 					<h3 className='text-2xl font-bold'>{project_name}</h3>
-					<p className='text-base opacity-70'>{description}</p>
+					<p className='text-base opacity-70'>{t(description)}</p>
 					<div className='flex items-center gap-2 opacity-90 font-medium'>
 						{technologies.map(tech => (
-							<span className='text-sm'>{tech}</span>
+							<span key={tech} className='text-sm'>
+								{tech}
+							</span>
 						))}
 					</div>
 				</div>

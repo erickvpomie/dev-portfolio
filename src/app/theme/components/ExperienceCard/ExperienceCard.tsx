@@ -3,6 +3,7 @@ import { LuExternalLink } from 'react-icons/lu'
 import { IExperienceCard } from '../../../shared/models/global-interface.ts'
 import { useHover } from '@uidotdev/usehooks'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const ExperienceCard: FC<IExperienceCard> = ({
 	id,
@@ -14,6 +15,7 @@ const ExperienceCard: FC<IExperienceCard> = ({
 	background_url,
 }) => {
 	const [ref, hovering] = useHover()
+	const { t } = useTranslation('global')
 	return (
 		<motion.div
 			key={id}
@@ -32,10 +34,10 @@ const ExperienceCard: FC<IExperienceCard> = ({
 					src={company_logo}
 					alt={company_name}
 				/>
-				<p className='text-center text-moonlit leading-4 mt-2 z-[1] font-medium'>
+				<p className='text-center text-moonlit leading-5 mt-2 z-[1] font-medium'>
 					{position_name}
 					<br />
-					{dates}
+					{t(dates)}
 				</p>
 			</div>
 			<a
@@ -43,7 +45,10 @@ const ExperienceCard: FC<IExperienceCard> = ({
 				href={url_site}
 				target='_blank'
 			>
-				<span>Visit {company_name}</span>
+				<span>
+					{t('others-translations.visit')}&nbsp;
+					{company_name}
+				</span>
 				<LuExternalLink />
 			</a>
 			<img

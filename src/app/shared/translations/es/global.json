@@ -1,3 +1,52 @@
 {
-  "salutation": "Hola"
+  "about-section": {
+    "title": "Sobre mi",
+    "description": "Desarrollador web con experiencia en diseño, desarrollo y mantenimiento en aplicaciones front-end"
+  },
+  "experience-box": {
+    "title": "Años de experiencia"
+  },
+  "location-box" : {
+    "title": "De Córdoba, MX"
+  },
+  "projects-section": {
+    "title": "Proyectos",
+    "description": "Algunos de los proyectos en los que he trabajado:",
+    "work-experience": "Experiencia laboral",
+    "personal-experience": "Experiencia personal",
+    "projects" : {
+      "DD3Land": "Construye tu meta-verso con DD3Land",
+      "profesional": "Plataforma para conectar profesionistas con clientes.",
+      "stock": "Aplicación para el seguimiento de acciones en la bolsa de valores.",
+      "bluee": "Landing page de Bluee IoT"
+    }
+  },
+  "technologies-section": {
+    "title": "Tecnologías",
+    "description": "Algunas de las tecnologías que he utilizado:"
+  },
+  "experience-section": {
+    "title": "Experiencia",
+    "description": "He trabajado en proyectos para empresas como:",
+    "companies": {
+      "DD360": {
+        "dates": "Jul. 2022 — Nov. 2023"
+      },
+      "nolab": {
+        "dates":  "Feb. 2022 — Jul. 2022"
+      },
+      "esperanza": {
+        "dates":  "Nov. 2021 — Feb. 2022"
+      },
+      "bwl": {
+        "dates":  "Ene. 2021 — Nov. 2021"
+      }
+    }
+  },
+  "others-translations": {
+    "degree": "Desarrollador Front-end",
+    "visit": "Visita",
+    "copy-right": "Todos los derechos reservados",
+    "last-update": "Última actualización: 12 de Enero de 2024"
+  }
 }
