@@ -44,6 +44,7 @@ const ExperienceCard: FC<IExperienceCard> = ({
 				className='py-2 px-4 bg-[#0568fe] text-moonlit font-medium rounded-lg flex items-center gap-2 z-[1]'
 				href={url_site}
 				target='_blank'
+				title={`${company_name} website`}
 			>
 				<span>
 					{t('others-translations.visit')}&nbsp;

@@ -22,17 +22,18 @@ const Header = () => {
 				</div>
 				<div className='flex items-center gap-4'>
 					<button
+						title='Translate'
 						className='text-xl'
 						onClick={() => setShowTranslateToggle(true)}
 					>
 						<LuLanguages />
 					</button>
 					{theme === 'light' ? (
-						<button onClick={toggleTheme}>
+						<button title='Switch to dark theme' onClick={toggleTheme}>
 							<MoonIcon className='w-6 h-6 fill-current text-[#2f3133] active:rotate-[360deg] transition-all duration-300' />
 						</button>
 					) : (
-						<button onClick={toggleTheme}>
+						<button title='Switch to white theme' onClick={toggleTheme}>
 							<SunIcon className='w-6 h-6 fill-current text-sun-beam active:rotate-[360deg] transition-all duration-300' />
 						</button>
 					)}

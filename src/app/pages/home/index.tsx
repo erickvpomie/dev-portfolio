@@ -57,18 +57,20 @@ const Home = () => {
 				{showTranslateToggle && (
 					<div className='w-full h-full relative max-w-5xl px-5 xl:max-w-7xl '>
 						<div className='w-auto h-auto absolute flex flex-col gap-2 px-5 py-4 -top-1 z-20 right-36 lg:right-[15rem] lg:top-4 bg-white dark:bg-raisin-black rounded-xl'>
-							<span
+							<button
+								title='English'
 								className='text-sm font-medium cursor-pointer'
 								onClick={() => switchLanguage('en')}
 							>
 								English
-							</span>
-							<span
+							</button>
+							<button
+								title='Spanish'
 								className='text-sm font-medium cursor-pointer'
 								onClick={() => switchLanguage('es')}
 							>
 								Spanish
-							</span>
+							</button>
 						</div>
 					</div>
 				)}
@@ -88,6 +90,7 @@ const Home = () => {
 							className='absolute w-full h-full object-cover left-0 top-0'
 							src={personal}
 							alt='personal'
+							title='Personal'
 						/>
 						<div className='w-full flex flex-col z-[2] absolute left-0 bottom-0 leading-4 p-5 text-moonlit'>
 							<span className='text-3xl font-bold leading-6'>
@@ -102,6 +105,7 @@ const Home = () => {
 									href='https://github.com/erickvpomie'
 									target='_blank'
 									rel='noreferrer'
+									title='GitHub'
 								>
 									<FaGithub />
 									<span className='hidden lg:flex'>GitHub</span>
@@ -111,6 +115,7 @@ const Home = () => {
 									href='https://www.linkedin.com/in/erickvpomie/'
 									target='_blank'
 									rel='noreferrer'
+									title='LinkedIn'
 								>
 									<FaLinkedin />
 									<span className='hidden lg:flex'>LinkedIn</span>
@@ -118,6 +123,7 @@ const Home = () => {
 								<a
 									className='flex items-center font-medium bg-moonlit px-4 py-2 rounded-lg text-dusky gap-2 active:scale-[1.1] transition-transform duration-300'
 									href='mailto:erickvpomie@gmail.com'
+									title='Email'
 								>
 									<MdAlternateEmail />
 									<span className='hidden lg:flex'>Email</span>
@@ -167,8 +173,14 @@ const Home = () => {
 							className='absolute w-full h-full object-cover z-[1]'
 							src={theme === THEME_LIGHT ? whiteMap : darkMap}
 							alt='Location'
+							title='Location'
 						/>
-						<img className='w-11 z-[2]' src={face} alt='memoji' />
+						<img
+							className='w-11 z-[2]'
+							src={face}
+							alt='memoji'
+							title='memoji'
+						/>
 						<div className='w-24 h-24 bg-[#98d0ff] absolute z-[1] rounded-full bg-opacity-30 border-2 border-white animate__animated animate__pulse animate__infinite infinite animate__fast' />
 						<AnimatePresence>
 							{hovering && (

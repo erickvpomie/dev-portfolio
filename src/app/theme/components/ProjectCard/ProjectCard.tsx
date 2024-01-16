@@ -43,6 +43,7 @@ const ProjectCard: FC<IProjectCard> = ({
 						href={demoLink}
 						target='_blank'
 						rel='noreferrer'
+						title={`${project_name} demo`}
 					>
 						<MdArrowOutward />
 					</a>
@@ -64,6 +65,7 @@ const ProjectCard: FC<IProjectCard> = ({
 					}`}
 					src={screenShot}
 					alt={project_name}
+					title='Project screenshot'
 				/>
 			</div>
 		</motion.div>
