@@ -9,7 +9,7 @@ const InfinityScroll = () => {
 					return (
 						<li key={tool.id} className='mx-8'>
 							<img
-								className='w-14 h-14 grayscale object-fill hover:grayscale-0'
+								className={`w-14 h-14 grayscale object-fill hover:grayscale-0 ${tool?.className}`}
 								src={tool.icon}
 								alt={tool.name}
 								title={tool.name}
@@ -26,7 +26,7 @@ const InfinityScroll = () => {
 					return (
 						<li key={tool.id} className='mx-8'>
 							<img
-								className='w-14 h-14 grayscale object-fill hover:grayscale-0'
+								className={`w-14 h-14 grayscale object-fill hover:grayscale-0 ${tool?.className}`}
 								src={tool.icon}
 								alt={tool.name}
 								title={tool.name}

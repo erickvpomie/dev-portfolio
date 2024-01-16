@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useMediaQuery } from '@uidotdev/usehooks'
+import { useTranslation } from 'react-i18next'
 import { MdAlternateEmail, MdAutoGraph } from 'react-icons/md'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
-import { useThemeStore } from '../../shared/stores/useThemeStore.ts'
 import Header from '../../theme/components/Header'
+import { useThemeStore } from '../../shared/stores/useThemeStore.ts'
+import { Experiences, Projects } from '../../shared/utils/global-utils.ts'
 import face from '../../../assets/memoji_face.webp'
 import personal from '../../../assets/IMG_0659.webp'
 import darkMap from '../../../assets/dark_map.webp'
 import whiteMap from '../../../assets/white_map.webp'
-import { Experiences, Projects } from '../../shared/utils/global-utils.ts'
 import {
 	IExperienceCard,
 	IProjectCard,
@@ -15,18 +18,14 @@ import {
 import ProjectCard from '../../theme/components/ProjectCard/ProjectCard.tsx'
 import ExperienceCard from '../../theme/components/ExperienceCard/ExperienceCard.tsx'
 import Footer from '../../theme/components/Footer/Footer.tsx'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useHover, useMediaQuery } from '@uidotdev/usehooks'
 import { AnimatedCounter } from '../../theme/components/AnimatedCounter/AnimatedCounter.tsx'
 import InfinityScroll from '../../theme/components/InfinityScroll/InfinityScroll.tsx'
 import { useTranslateStore } from '../../shared/stores/useTranslateStore.ts'
 import { switchLanguage } from '../../shared/utils/translate-utils.tsx'
-import { useTranslation } from 'react-i18next'
 import { THEME_TYPES } from '../../shared/constants'
 
 const Home = () => {
 	const { THEME_LIGHT } = THEME_TYPES
-	const [ref, hovering] = useHover()
 	const { t } = useTranslation('global')
 	const theme = useThemeStore(state => state.theme)
 	const [isMobile, setIsMobile] = useState(false)
@@ -93,10 +92,10 @@ const Home = () => {
 							title='Personal'
 						/>
 						<div className='w-full flex flex-col z-[2] absolute left-0 bottom-0 leading-4 p-5 text-moonlit'>
-							<span className='text-3xl font-bold leading-6'>
+							<span className='text-3xl font-bold leading-7'>
 								José Erick Villa Pomié
 							</span>
-							<span className='text-lg font-medium'>
+							<span className='text-lg font-medium leading-9'>
 								{t('others-translations.degree')}
 							</span>
 							<div className='flex flex-wrap items-center gap-2 mt-1 lg:gap-3'>
@@ -162,7 +161,6 @@ const Home = () => {
 						<MdAutoGraph className='w-full h-full absolute -right-10 -bottom-12 opacity-5 dark:opacity-[0.02] p-5 z-[0]' />
 					</motion.div>
 					<motion.div
-						ref={ref}
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ delay: isMobile ? 0.2 : 0.35, duration: 0.3 }}
@@ -182,20 +180,16 @@ const Home = () => {
 							title='memoji'
 						/>
 						<div className='w-24 h-24 bg-[#98d0ff] absolute z-[1] rounded-full bg-opacity-30 border-2 border-white animate__animated animate__pulse animate__infinite infinite animate__fast' />
-						<AnimatePresence>
-							{hovering && (
-								<motion.div
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									exit={{ opacity: 0 }}
-									className='w-full h-10 backdrop-blur-sm absolute left-0 bottom-0 z-[2] flex items-center justify-center text-left text-opacity-70'
-								>
-									<span className='text-xs font-medium'>
-										{t('location-box.title')} 🇲🇽
-									</span>
-								</motion.div>
-							)}
-						</AnimatePresence>
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							className='w-full h-10 backdrop-blur-sm absolute left-0 bottom-0 z-[2] flex items-center justify-center text-left text-opacity-70'
+						>
+							<span className='text-xs font-medium'>
+								{t('location-box.title')} 🇲🇽
+							</span>
+						</motion.div>
 					</motion.div>
 				</section>
 				<header className='w-full flex flex-col gap-2 text-center'>

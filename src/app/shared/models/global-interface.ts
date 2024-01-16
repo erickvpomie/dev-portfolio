@@ -24,4 +24,5 @@ export interface IDevToolsElement {
 	id: string
 	name: string
 	icon: string
+	className?: string
 }

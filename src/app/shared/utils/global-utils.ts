@@ -123,7 +123,7 @@ export const DevTools: IDevToolsElement[] = [
 	{
 		id: uuid(),
 		name: 'SASS',
-		icon: 'https://sass-lang.com/assets/img/logos/logo.svg',
+		icon: 'https://www.svgrepo.com/show/374061/sass.svg',
 	},
 	{
 		id: uuid(),
@@ -138,7 +138,8 @@ export const DevTools: IDevToolsElement[] = [
 	{
 		id: uuid(),
 		name: 'Next.js',
-		icon: 'https://rakesh-gupta29.github.io/img/logos/nextjs.svg',
+		icon: 'https://www.svgrepo.com/show/354113/nextjs-icon.svg',
+		className: 'dark:invert opacity-70',
 	},
 	{
 		id: uuid(),
@@ -169,5 +170,11 @@ export const DevTools: IDevToolsElement[] = [
 		id: uuid(),
 		name: 'MongoDB',
 		icon: 'https://www.svgrepo.com/show/331488/mongodb.svg',
-	}
+	},
+	{
+		id: uuid(),
+		name: 'MySQL',
+		icon: 'https://www.svgrepo.com/show/306453/mysql.svg',
+		className: 'dark:invert opacity-70',
+	},
 ]

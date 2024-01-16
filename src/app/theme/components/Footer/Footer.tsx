@@ -29,6 +29,7 @@ const Footer = () => {
 						<a
 							className='flex items-center font-medium'
 							href='mailto:erickvpomie@gmail.com'
+							title='Email me'
 						>
 							<MdAlternateEmail />
 						</a>
@@ -37,6 +38,7 @@ const Footer = () => {
 							href='https://www.linkedin.com/in/erickvpomie/'
 							target='_blank'
 							rel='noreferrer'
+							title='LinkedIn'
 						>
 							<FaLinkedin />
 						</a>
