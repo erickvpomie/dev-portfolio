@@ -155,4 +155,19 @@ export const DevTools: IDevToolsElement[] = [
 		name: '.NET',
 		icon: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg',
 	},
+	{
+		id: uuid(),
+		name: 'Laravel',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg',
+	},
+	{
+		id: uuid(),
+		name: 'Node.js',
+		icon: 'https://www.svgrepo.com/show/355140/node.svg',
+	},
+	{
+		id: uuid(),
+		name: 'MongoDB',
+		icon: 'https://www.svgrepo.com/show/331488/mongodb.svg',
+	}
 ]

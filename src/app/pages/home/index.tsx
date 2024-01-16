@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { MdAlternateEmail, MdAutoGraph } from 'react-icons/md'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
-import { mapGenerator } from '../../shared/utils/map-utils.ts'
 import { useThemeStore } from '../../shared/stores/useThemeStore.ts'
 import Header from '../../theme/components/Header'
-import face from '../../../assets/memoji_face.png'
+import face from '../../../assets/memoji_face.webp'
 import personal from '../../../assets/IMG_0659.webp'
+import darkMap from '../../../assets/dark_map.webp'
+import whiteMap from '../../../assets/white_map.webp'
 import { Experiences, Projects } from '../../shared/utils/global-utils.ts'
 import {
 	IExperienceCard,
@@ -21,8 +22,10 @@ import InfinityScroll from '../../theme/components/InfinityScroll/InfinityScroll
 import { useTranslateStore } from '../../shared/stores/useTranslateStore.ts'
 import { switchLanguage } from '../../shared/utils/translate-utils.tsx'
 import { useTranslation } from 'react-i18next'
+import { THEME_TYPES } from '../../shared/constants'
 
 const Home = () => {
+	const { THEME_LIGHT } = THEME_TYPES
 	const [ref, hovering] = useHover()
 	const { t } = useTranslation('global')
 	const theme = useThemeStore(state => state.theme)
@@ -44,10 +47,6 @@ const Home = () => {
 	useEffect(() => {
 		setIsMobile(mobile)
 	}, [mobile])
-
-	useEffect(() => {
-		mapGenerator()
-	}, [theme])
 
 	return (
 		<div
@@ -82,8 +81,9 @@ const Home = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.2, duration: 0.4 }}
 						viewport={{ once: true }}
-						className='row-span-2 col-span-6 rounded-3xl bg-white relative flex flex-col overflow-hidden border-2 border-transparent gap-10 justify-end p-6 dark:bg-raisin-black xl:col-span-4 lg:items-end sm:flex-row  lg:p-10'
+						className='row-span-2 col-span-6 rounded-3xl bg-white relative flex flex-col overflow-hidden gap-10 justify-end p-6 dark:bg-raisin-black xl:col-span-4 lg:items-end sm:flex-row  lg:p-10'
 					>
+						<div className='absolute bg-gradient-to-t from-dusky-alt to-transparent top-0 left-0 bottom-0 right-0 z-[2]' />
 						<img
 							className='absolute w-full h-full object-cover left-0 top-0'
 							src={personal}
@@ -156,7 +156,6 @@ const Home = () => {
 						<MdAutoGraph className='w-full h-full absolute -right-10 -bottom-12 opacity-5 dark:opacity-[0.02] p-5 z-[0]' />
 					</motion.div>
 					<motion.div
-						id='map'
 						ref={ref}
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -164,6 +163,11 @@ const Home = () => {
 						viewport={{ once: true }}
 						className='row-span-1 col-span-3 rounded-3xl bg-white dark:bg-raisin-black overflow-hidden border-2 border-transparent xl:col-span-1 flex items-center justify-center relative'
 					>
+						<img
+							className='absolute w-full h-full object-cover z-[1]'
+							src={theme === THEME_LIGHT ? whiteMap : darkMap}
+							alt='Location'
+						/>
 						<img className='w-11 z-[2]' src={face} alt='memoji' />
 						<div className='w-24 h-24 bg-[#98d0ff] absolute z-[1] rounded-full bg-opacity-30 border-2 border-white animate__animated animate__pulse animate__infinite infinite animate__fast' />
 						<AnimatePresence>

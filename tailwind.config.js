@@ -7,9 +7,10 @@ export default {
 			colors: {
 				// dusky: '#202329',
 				dusky: '#0b0a10',
+				'dusky-alt': 'rgba(11,10,16,0.5)',
 				moonlit: '#f5f5f7',
-				// midnight: '#343436',
-				midnight: '#202329',
+				midnight: '#343436',
+				// midnight: '#202329',
 				noon: '#efeef2',
 				'neon-blue': '#4353ff',
 				'light-green': '#7cea9cff',
