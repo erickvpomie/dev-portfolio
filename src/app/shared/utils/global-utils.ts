@@ -43,7 +43,7 @@ export const Projects: IProjectCard[] = [
 		project_name: 'Stock Market',
 		description: 'projects-section.projects.stock',
 		screenShot: gbm,
-		demoLink: 'https://fluffy-marigold-adc835.netlify.app/',
+		demoLink: 'https://stock-market-demo.vercel.app/home',
 		className: 'lg:row-span-3 xl:col-span-4',
 		isPrivate: true,
 		index: 3,
