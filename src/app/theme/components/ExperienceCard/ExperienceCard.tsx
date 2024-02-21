@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { LuExternalLink } from 'react-icons/lu'
 import { IExperienceCard } from '../../../shared/models/global-interface.ts'
-import { useHover } from '@uidotdev/usehooks'
+import { useHover, useMediaQuery } from '@uidotdev/usehooks'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
@@ -14,15 +14,22 @@ const ExperienceCard: FC<IExperienceCard> = ({
 	url_site,
 	background_url,
 }) => {
+	const [isMobile, setIsMobile] = useState(false)
+	const mobile = useMediaQuery('only screen and (max-width : 768px)')
 	const [ref, hovering] = useHover()
 	const { t } = useTranslation('global')
+
+	useEffect(() => {
+		setIsMobile(mobile)
+	}, [mobile])
+
 	return (
 		<motion.div
 			key={id}
 			ref={ref}
 			initial={{ opacity: 0, y: 20 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ delay: 0.2, duration: 0.5 }}
+			transition={{ delay: isMobile ? 0 : 0.2, duration: 0.3 }}
 			viewport={{ once: true }}
 			className='row-span-1 col-span-8 lg:row-span-2 lg:col-span-2 bg-white dark:bg-raisin-black rounded-3xl overflow-hidden relative flex flex-col py-14 items-center justify-between'
 		>

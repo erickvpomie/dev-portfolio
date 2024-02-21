@@ -1,7 +1,7 @@
 {
   "about-section": {
     "title": "Sobre mi",
-    "description": "Desarrollador web con experiencia en diseño, desarrollo y mantenimiento en aplicaciones front-end"
+    "description": "Desarrollador web con experiencia en el diseño, desarrollo, implementación y mantenimiento de aplicaciones web."
   },
   "experience-box": {
     "title": "Años de experiencia"
@@ -47,6 +47,6 @@
     "degree": "Desarrollador Front-end",
     "visit": "Visita",
     "copy-right": "Todos los derechos reservados",
-    "last-update": "Última actualización: 14 de Enero de 2024"
+    "last-update": "Última actualización: 21 de Febrero de 2024"
   }
 }

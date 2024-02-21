@@ -14,7 +14,7 @@ const Header = () => {
 
 	return (
 		<header className='w-full overflow-x-hidden h-[5rem] flex justify-center dark:bg-dusky bg-opacity-70 dark:bg-opacity-70 fixed top-0 left-0 z-10 backdrop-blur-lg subpixel-antialiased'>
-			<nav className='w-full h-full flex items-center justify-between py-1 px-5 max-w-5xl xl:max-w-7xl'>
+			<nav className='w-full h-full flex items-center justify-between py-1 px-5 max-w-5xl xl:max-w-6xl'>
 				<div className='w-7 h-7 bg-dusky flex items-center justify-center dark:bg-moonlit p-4'>
 					<span className='text-moonlit text-md font-semibold dark:text-dusky'>
 						EP
@@ -38,7 +38,7 @@ const Header = () => {
 						</button>
 					)}
 					<a
-						className='w-auto h-7 px-4 font-medium flex items-center gap-2 bg-dusky text-moonlit rounded-3xl dark:text-dusky dark:bg-moonlit lg:h-10 lg:px-6 cursor-pointer active:scale-[1.1] transition-all duration-300'
+						className='w-auto h-7 px-4 font-medium flex items-center gap-2 bg-dusky text-moonlit rounded-3xl dark:text-dusky dark:bg-moonlit lg:h-10 lg:px-6 cursor-pointer active:scale-[1.1] transition-transform duration-300'
 						href='https://drive.google.com/file/d/12Uwpr54YYHYj0VOvYBmAcjY1cGQE_1iq/view?usp=sharing'
 						target='_blank'
 					>

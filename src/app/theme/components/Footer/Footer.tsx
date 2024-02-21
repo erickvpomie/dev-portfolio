@@ -12,7 +12,7 @@ const Footer = () => {
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.2, duration: 0.5 }}
 			viewport={{ once: true }}
-			className='w-full h-40 flex flex-col items-start justify-center max-w-5xl px-5 xl:max-w-7xl text-base'
+			className='w-full h-40 flex flex-col items-start justify-center max-w-5xl px-5 xl:max-w-6xl text-base'
 		>
 			<div className='w-full h-full bg-white dark:bg-raisin-black rounded-3xl flex items-center justify-between px-10'>
 				<div className='flex flex-col items-start opacity-50 max-w-[50%] lg:max-w-fit'>
