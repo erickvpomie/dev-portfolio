@@ -1,10 +1,12 @@
 import { FC, useEffect, useState } from 'react'
-import { ImStack } from 'react-icons/im'
-import { MdArrowOutward } from 'react-icons/md'
-import { IProjectCard } from '../../../shared/models/global-interface.ts'
+
 import { useHover, useMediaQuery } from '@uidotdev/usehooks'
 import { motion } from 'framer-motion'
+import { ImStack } from 'react-icons/im'
+import { MdArrowOutward } from 'react-icons/md'
 import { useTranslation } from 'react-i18next'
+
+import { IProjectCard } from '@/app/shared/models/global-interface.ts'
 const ProjectCard: FC<IProjectCard> = ({
 	id,
 	project_name,

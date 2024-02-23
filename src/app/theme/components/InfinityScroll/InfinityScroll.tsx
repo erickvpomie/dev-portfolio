@@ -1,5 +1,5 @@
-import { DevTools } from '../../../shared/utils/global-utils.ts'
-import { IDevToolsElement } from '../../../shared/models/global-interface.ts'
+import { DevTools } from '@/app/shared/utils/global-utils.ts'
+import { IDevToolsElement } from '@/app/shared/models/global-interface.ts'
 
 const InfinityScroll = () => {
 	return (

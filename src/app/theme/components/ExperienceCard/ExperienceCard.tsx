@@ -1,9 +1,10 @@
 import { FC, useEffect, useState } from 'react'
-import { LuExternalLink } from 'react-icons/lu'
-import { IExperienceCard } from '../../../shared/models/global-interface.ts'
 import { useHover, useMediaQuery } from '@uidotdev/usehooks'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { LuExternalLink } from 'react-icons/lu'
+
+import { IExperienceCard } from '@/app/shared/models/global-interface.ts'
 
 const ExperienceCard: FC<IExperienceCard> = ({
 	id,

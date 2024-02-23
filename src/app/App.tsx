@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import Home from './pages/home'
-import '../app/theme/styles/global.css'
-import { applyThemePreference } from './shared/utils/theme-utils.ts'
-import { useThemeStore } from './shared/stores/useThemeStore.ts'
-import 'animate.css'
 import { useTranslation } from 'react-i18next'
+import 'animate.css'
+import '@/app/theme/styles/global.css'
+import Home from '@/app/pages/home'
+import { applyThemePreference } from '@/app/shared/utils/theme-utils.ts'
+import { useThemeStore } from '@/app/shared/stores/useThemeStore.ts'
 import { useTranslateStore } from './shared/stores/useTranslateStore.ts'
 
 function App() {

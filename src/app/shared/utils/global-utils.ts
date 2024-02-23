@@ -1,21 +1,23 @@
+import { v4 as uuid } from 'uuid'
+
 import {
 	IDevToolsElement,
 	IExperienceCard,
 	IProjectCard,
-} from '../models/global-interface.ts'
-import { v4 as uuid } from 'uuid'
-import dd3_bg from '../../../assets/dd3_bg.webp'
-import dd360 from '../../../assets/dd360.webp'
-import nolab_bg from '../../../assets/nolab_bg.webp'
-import nolab from '../../../assets/nolab.webp'
-import esperanza_bg from '../../../assets/esperanza_bg.webp'
-import esperanza from '../../../assets/esperanza.webp'
-import bwl_bg from '../../../assets/bwl_bg.webp'
-import bwl from '../../../assets/bwl.svg'
-import editor_dd3 from '../../../assets/dd3land-editor.webp'
-import profesional from '../../../assets/profesional-urbano.webp'
-import bluee from '../../../assets/bluee-iot.webp'
-import gbm from '../../../assets/GBM.webp'
+} from '@/app/shared/models/global-interface.ts'
+
+import dd3_bg from '@/assets/dd3_bg.webp'
+import dd360 from '@/assets/dd360.webp'
+import nolab_bg from '@/assets/nolab_bg.webp'
+import nolab from '@/assets/nolab.webp'
+import esperanza_bg from '@/assets/esperanza_bg.webp'
+import esperanza from '@/assets/esperanza.webp'
+import bwl_bg from '@/assets/bwl_bg.webp'
+import bwl from '@/assets/bwl.svg'
+import editor_dd3 from '@/assets/dd3land-editor.webp'
+import profesional from '@/assets/profesional-urbano.webp'
+import bluee from '@/assets/bluee-iot.webp'
+import gbm from '@/assets/GBM.webp'
 
 export const Projects: IProjectCard[] = [
 	{

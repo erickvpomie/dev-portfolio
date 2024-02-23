@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next'
+
+import { motion } from 'framer-motion'
+
 import { GoHeartFill } from 'react-icons/go'
 import { FaLinkedin } from 'react-icons/fa6'
 import { MdAlternateEmail } from 'react-icons/md'
-import { motion } from 'framer-motion'
-import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
 	const { t } = useTranslation('global')
@@ -10,7 +12,7 @@ const Footer = () => {
 		<motion.footer
 			initial={{ opacity: 0, y: 20 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ delay: 0.2, duration: 0.5 }}
+			transition={{ duration: 0.5 }}
 			viewport={{ once: true }}
 			className='w-full h-40 flex flex-col items-start justify-center max-w-5xl px-5 xl:max-w-6xl text-base'
 		>

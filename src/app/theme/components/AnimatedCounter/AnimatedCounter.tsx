@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+
 import {
 	animate,
 	motion,
@@ -13,7 +14,7 @@ type CounterProps = {
 	className?: string
 }
 
-function AnimatedCounter({ from, to, className }: CounterProps) {
+const AnimatedCounter = ({ from, to, className }: CounterProps) => {
 	const count = useMotionValue(from)
 	const rounded = useTransform(count, latest => {
 		return Math.round(latest)
