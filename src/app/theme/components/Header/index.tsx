@@ -9,6 +9,7 @@ import { switchLanguage } from '@/app/shared/utils/translate-utils.tsx'
 
 import SunIcon from '@/app/theme/icons/SunIcon.tsx'
 import MoonIcon from '@/app/theme/icons/MoonIcon.tsx'
+import curriculum from '@/assets/CV_ JEVP_2024b.pdf'
 
 const Header = () => {
 	const portalDiv = document.getElementById('portal')!
@@ -53,7 +54,7 @@ const Header = () => {
 					)}
 					<a
 						className='w-auto h-7 px-4 font-medium flex items-center gap-2 bg-dusky text-moonlit rounded-3xl dark:text-dusky dark:bg-moonlit lg:h-10 lg:px-6 cursor-pointer active:scale-[1.1] transition-transform duration-300'
-						href='https://drive.google.com/file/d/12Uwpr54YYHYj0VOvYBmAcjY1cGQE_1iq/view?usp=sharing'
+						href={curriculum}
 						target='_blank'
 					>
 						<GrCloudDownload />

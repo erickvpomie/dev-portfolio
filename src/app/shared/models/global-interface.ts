@@ -18,6 +18,7 @@ export interface IProjectCard {
 	isPrivate?: boolean
 	demoLink?: string
 	className?: string
+	newProject?: boolean
 }
 
 export interface IDevToolsElement {

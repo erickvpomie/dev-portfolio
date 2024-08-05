@@ -4,6 +4,7 @@ import { useHover, useMediaQuery } from '@uidotdev/usehooks'
 import { motion } from 'framer-motion'
 import { ImStack } from 'react-icons/im'
 import { MdArrowOutward } from 'react-icons/md'
+import { FaFire } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
 import { IProjectCard } from '@/app/shared/models/global-interface.ts'
@@ -16,6 +17,7 @@ const ProjectCard: FC<IProjectCard> = ({
 	demoLink,
 	className,
 	isPrivate = false,
+	newProject = false,
 	index,
 }) => {
 	const [isMobile, setIsMobile] = useState(false)
@@ -46,6 +48,12 @@ const ProjectCard: FC<IProjectCard> = ({
 							: t('projects-section.work-experience')}
 					</span>
 				</div>
+				{newProject && (
+					<div className='absolute flex items-center justify-center text-white gap-2 bg-red-500 p-2 rounded-lg bottom-3 z-10 lg:bottom-auto lg:right-24 lg:rounded-2xl lg:py-1 lg:px-3'>
+						<FaFire />
+						{t('projects-section.new-label')}
+					</div>
+				)}
 				{demoLink && (
 					<a
 						className='p-2 border-2 border-dusky dark:border-moonlit opacity-40 rounded-full absolute top-6 right-6 lg:top-8 lg:right-8 cursor-pointer hover:bg-dusky hover:text-white dark:hover:bg-moonlit dark:hover:text-dusky transition-colors duration-150 z-[1]'

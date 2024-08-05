@@ -9,7 +9,7 @@ import { THEME_TYPES } from '@/app/shared/constants'
 import { useThemeStore } from '@/app/shared/stores/useThemeStore.ts'
 import { useTranslation } from 'react-i18next'
 
-import personal from '@/assets/IMG_0659.webp'
+import personal from '@/assets/IMG_0974.webp'
 import whiteMap from '@/assets/white_map.webp'
 import darkMap from '@/assets/dark_map.webp'
 import face from '@/assets/memoji_face.webp'
@@ -122,7 +122,7 @@ const HeroSection: FC = () => {
 					title='Location'
 				/>
 				<img className='w-8 z-[2]' src={face} alt='memoji' title='memoji' />
-				<div className='w-20 h-20 bg-[#98d0ff] absolute z-[1] rounded-full bg-opacity-30 border-2 border-white animate__animated animate__pulse animate__infinite infinite animate__fast' />
+				<div className='w-20 h-20 bg-[#98d0ff] absolute z-[1] rounded-full bg-opacity-30 border-2 border-white animate__animated animate__pulse animate__infinite animate__fast' />
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}

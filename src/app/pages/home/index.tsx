@@ -83,8 +83,8 @@ const Home = () => {
 					</motion.p>
 				</header>
 				<PositionsSection />
+				<Footer />
 			</main>
-			<Footer />
 		</div>
 	)
 }

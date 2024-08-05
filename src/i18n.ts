@@ -10,7 +10,7 @@ i18next.init({
 		es: { global: es },
 		en: { global: en },
 	},
-	lng: 'en',
+	lng: 'es',
 })
 
 export default i18next

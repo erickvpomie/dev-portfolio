@@ -37,3 +37,15 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #8F8F8F;
 }
+
+.swiper-button-prev:after {
+  color: white;
+}
+
+.swiper-button-next:after {
+  color: white;
+}
+
+.swiper-button-disabled:after{
+  display: none;
+}

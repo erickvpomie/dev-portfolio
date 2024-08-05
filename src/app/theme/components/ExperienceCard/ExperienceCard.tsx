@@ -32,9 +32,9 @@ const ExperienceCard: FC<IExperienceCard> = ({
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ delay: isMobile ? 0 : 0.2, duration: 0.3 }}
 			viewport={{ once: true }}
-			className='row-span-1 col-span-8 lg:row-span-2 lg:col-span-2 bg-white dark:bg-raisin-black rounded-3xl overflow-hidden relative flex flex-col py-14 items-center justify-between'
+			className='row-span-1 col-span-8 lg:row-span-2 lg:col-span-2 lg:w-[266px] lg:h-[536px] bg-white dark:bg-raisin-black rounded-3xl overflow-hidden relative flex flex-col py-14 items-center justify-between'
 		>
-			<div className='flex flex-col items-center'>
+			<div className='w-full flex flex-col items-center'>
 				<img
 					className={`w-40 h-10 object-contain z-[1] ${
 						company_name !== 'Nolab' && 'invert grayscale'

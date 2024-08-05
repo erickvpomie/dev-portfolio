@@ -1,7 +1,7 @@
 {
   "about-section": {
     "title": "Sobre mi",
-    "description": "Desarrollador web con experiencia en el diseño, desarrollo, implementación y mantenimiento de aplicaciones web."
+    "description": "Desarrollador de software enfocado en el crecimiento profesional, busco crear soluciones efectivas y de alta calidad."
   },
   "experience-box": {
     "title": "Años de experiencia"
@@ -18,8 +18,10 @@
       "DD3Land": "Construye tu meta-verso con DD3Land",
       "profesional": "Plataforma para conectar profesionistas con clientes.",
       "stock": "Aplicación para el seguimiento de acciones en la bolsa de valores.",
-      "bluee": "Landing page de Bluee IoT"
-    }
+      "bluee": "Landing page de Bluee IoT",
+      "asociados": "Plataforma de contratación de seguros"
+    },
+    "new-label": "Nuevo proyecto"
   },
   "technologies-section": {
     "title": "Tecnologías",
@@ -29,6 +31,9 @@
     "title": "Experiencia",
     "description": "He trabajado en proyectos para empresas como:",
     "companies": {
+      "promass": {
+        "dates": "Febrero. 2024 — Actualidad"
+      },
       "DD360": {
         "dates": "Jul. 2022 — Nov. 2023"
       },
@@ -47,6 +52,6 @@
     "degree": "Desarrollador Front-end",
     "visit": "Visita",
     "copy-right": "Todos los derechos reservados",
-    "last-update": "Última actualización: 21 de Febrero de 2024"
+    "last-update": "Última actualización: 4 de Agosto de 2024"
   }
 }

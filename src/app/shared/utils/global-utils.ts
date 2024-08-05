@@ -18,8 +18,22 @@ import editor_dd3 from '@/assets/dd3land-editor.webp'
 import profesional from '@/assets/profesional-urbano.webp'
 import bluee from '@/assets/bluee-iot.webp'
 import gbm from '@/assets/GBM.webp'
+import asociados from '@/assets/asociados.webp'
+import protec from '@/assets/protec.webp'
+import gpmass_bg from '@/assets/gpmass.webp'
 
-export const Projects: IProjectCard[] = [
+export const projects: IProjectCard[] = [
+	{
+		id: uuid(),
+		project_name: 'Woow asociados',
+		description: 'projects-section.projects.asociados',
+		screenShot: asociados,
+		demoLink: 'https://asociados.poweredbywoow.com/hdi',
+		className: 'lg:row-span-4 xl:col-span-8',
+		index: 0,
+		technologies: ['React', 'Zustand', 'ViteJS', 'Mantine', 'ESLint'],
+		newProject: true,
+	},
 	{
 		id: uuid(),
 		project_name: 'DD3Land Editor',
@@ -62,14 +76,24 @@ export const Projects: IProjectCard[] = [
 		technologies: ['Angular', 'TypeScript', 'SASS'],
 	},
 ]
-export const Experiences: IExperienceCard[] = [
+
+export const experiences: IExperienceCard[] = [
+	{
+		id: uuid(),
+		company_logo: protec,
+		company_name: 'Protec',
+		position_name: 'Front-end Developer Senior',
+		dates: 'experience-section.companies.promass.dates',
+		url_site: 'https://www.tiprotec.com.mx/',
+		background_url: gpmass_bg,
+	},
 	{
 		id: uuid(),
 		company_logo: dd360,
 		company_name: 'DD360',
 		position_name: 'Front-end Developer',
 		dates: 'experience-section.companies.DD360.dates',
-		url_site: 'https://dd360.com/',
+		url_site: 'https://dd360.mx',
 		background_url: dd3_bg,
 	},
 	{
@@ -101,7 +125,7 @@ export const Experiences: IExperienceCard[] = [
 	},
 ]
 
-export const DevTools: IDevToolsElement[] = [
+export const devTools: IDevToolsElement[] = [
 	{
 		id: uuid(),
 		name: 'HTML5',
