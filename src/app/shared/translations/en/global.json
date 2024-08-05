@@ -9,6 +9,9 @@
   "location-box" : {
     "title": "From Córdoba, MX"
   },
+  "resume-box": {
+    "title": "Download"
+  },
   "projects-section": {
     "title": "Projects",
     "description": "Here are some projects I've worked on in the past few years.",

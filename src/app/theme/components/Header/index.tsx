@@ -10,8 +10,10 @@ import { switchLanguage } from '@/app/shared/utils/translate-utils.tsx'
 import SunIcon from '@/app/theme/icons/SunIcon.tsx'
 import MoonIcon from '@/app/theme/icons/MoonIcon.tsx'
 import curriculum from '@/assets/CV_ JEVP_2024b.pdf'
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
+	const { t } = useTranslation('global')
 	const portalDiv = document.getElementById('portal')!
 	const toggleTheme = useThemeStore(state => state.toggleTheme)
 	const theme = useThemeStore(state => state.theme)
@@ -59,7 +61,9 @@ const Header = () => {
 					>
 						<GrCloudDownload />
 						<div className='flex items-center'>
-							<span className='hidden lg:flex'>Download &nbsp;</span>
+							<span className='hidden lg:flex'>
+								{t('resume-box.title')} &nbsp;
+							</span>
 							<span>CV</span>
 						</div>
 					</a>

@@ -29,7 +29,7 @@ export const projects: IProjectCard[] = [
 		description: 'projects-section.projects.asociados',
 		screenShot: asociados,
 		demoLink: 'https://asociados.poweredbywoow.com/hdi',
-		className: 'lg:row-span-4 xl:col-span-8',
+		className: 'lg:row-span-4 xl:col-span-4',
 		index: 0,
 		technologies: ['React', 'Zustand', 'ViteJS', 'Mantine', 'ESLint'],
 		newProject: true,

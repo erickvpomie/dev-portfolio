@@ -9,6 +9,9 @@
   "location-box" : {
     "title": "De Córdoba, MX"
   },
+  "resume-box": {
+      "title": "Descargar"
+  },
   "projects-section": {
     "title": "Proyectos",
     "description": "Algunos de los proyectos en los que he trabajado:",
